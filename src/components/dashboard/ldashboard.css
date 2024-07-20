@@ -1,0 +1,299 @@
+/* Base styling for the dashboard container */
+.l-dashbaord-container {
+    padding: 2vh 1.5vw;
+    background-color: #151E3F;
+    color: #F2F3D9;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+
+/* Flex layout for rows */
+.row {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Common styling for both sidebars */
+.l-left-sidebar, .l-right-sidebar {
+    height: 95vh;
+    overflow-y: auto;
+}
+
+/* Styling for the logo */
+.l-logo {
+    font-size: 2rem;
+    text-decoration: none;
+    color: #F2F3D9;
+}
+
+/* Borders for sidebar distinction */
+.l-left-sidebar {
+    border-right: 1px solid #800080;
+}
+
+.l-right-sidebar {
+    border-left: 1px solid #800080;
+}
+
+/* Scrollable content areas */
+.scrollable-column {
+    overflow-y: auto;
+    height: 95vh;
+    padding-left: 15px;
+    padding-right: 15px;
+    scrollbar-color: #F2F3D9 #151E3F;
+}
+
+/* Custom scrollbar styles */
+.l-left-sidebar::-webkit-scrollbar, .l-right-sidebar::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Profile container styling */
+.l-dashboard-profile-container {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #F2F3D9;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* User info display */
+.l-right-sidebar-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.l-dash-user-icon {
+    font-size: 3rem;
+    padding-top: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.l-right-sidebar-user-info {
+    display: flex;
+}
+
+.l-dashboard-user-name {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+}
+
+.l-dashboard-user-name h4, .l-dashboard-user-name p {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.l-dashboard-user-name p {
+    font-size: small;
+}
+
+/* Notification icon */
+.l-dash-bell-icon {
+    font-size: 1.7rem;
+    margin-bottom: 0.7rem;
+    cursor: pointer;
+}
+
+/* Menu items styling */
+.l-left-sidebar hr {
+    border-bottom: 3px solid #800080;
+}
+
+.menu-items-container {
+    margin-top: 2vh;
+}
+
+.l-discover-genre-top, .l-top-music-top {
+    display: flex;
+    flex-direction: row;
+    margin-top: 3vh;
+}
+
+.l-discover-genre-music-icon, .l-top-music-icon-header {
+    color: #800080;
+}
+
+.l-discover-genre-top h5, .l-top-music-icon-header {
+    padding: 0.3rem 1rem 0 1rem;
+}
+
+.l-top-music h5 {
+    padding: 0;
+}
+
+.l-top-artist-column {
+    margin-bottom: 20px;
+    margin-top: 3vh;
+}
+
+.l-menu-items {
+    padding-left: 0;
+}
+
+.menu {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 20px;
+    padding: 1rem 0 0.5rem 0.75rem;
+    cursor: pointer;
+}
+
+.menu.active {
+    border: 1px solid #F2F3D9;
+    border-radius: 17px;
+    background-color: #0E152B;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu-icon {
+    font-size: 1.5rem;
+}
+
+.l-discover-genre-bottom {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: auto;
+    scrollbar-color: #F2F3D9 #151E3F;
+    padding-bottom: 15px;
+}
+
+/* Search modal styling */
+.search-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+}
+
+.search-modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+.search-results {
+    display: none;
+}
+
+.search-result {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.search-result img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.search-result h4 {
+    margin: 0;
+    font-size: 16px;
+    color: red;
+}
+
+.search-result p {
+    margin: 0;
+    color: red;
+}
+
+.l-search-container {
+    position:relative;
+    display: inline-block;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.search-textbox {
+    width: 100%;
+    height: 50px;
+    border-radius: 40px;
+    border: 1px solid #151E3F;
+    padding-left: 2.5rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #151E3F;
+    pointer-events: none;
+    font-size: 1rem;
+}
+
+.suggestions-list {
+    position: absolute;
+    top: 55px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.suggestions-list li {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.suggestions-list li:hover {
+    background: #f0f0f0;
+}
+
+.suggestions-list img {
+    width: 100%;
+}
+
+.tag-art-container, .tag-art-container img {
+    width: 100%;
+}
+
+.desktop-dashboard {
+    display: block;
+}
+
+.mobile-dashboard {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .desktop-dashboard {
+        display: none;
+    }
+
+    .mobile-dashboard {
+        display: block;
+    }
+}
